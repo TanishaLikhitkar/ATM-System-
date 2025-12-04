@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// --------------------------
-// ACCOUNT STRUCTURE
-// --------------------------
 struct Account {
     int pin;
     float balance;
@@ -15,9 +12,6 @@ struct Account {
 // Global account data
 struct Account user = {1234, 10000, {0}, 0};
 
-// --------------------------
-// FUNCTION DECLARATIONS
-// --------------------------
 int login();
 void menu();
 void checkBalance();
@@ -28,9 +22,6 @@ void miniStatement();
 void saveData();
 void loadData();
 
-// --------------------------
-// LOGIN FUNCTION
-// --------------------------
 int login() {
     int pin, attempts = 0;
 
@@ -49,9 +40,6 @@ int login() {
     return 0;
 }
 
-// --------------------------
-// BALANCE CHECK
-// --------------------------
 void checkBalance() {
     printf("\n----------------------------------\n");
     printf("      YOUR CURRENT BALANCE\n");
@@ -59,9 +47,6 @@ void checkBalance() {
     printf("Balance: ₹%.2f\n", user.balance);
 }
 
-// --------------------------
-// WITHDRAW CASH
-// --------------------------
 void withdrawCash() {
     float amount;
 
@@ -83,9 +68,6 @@ void withdrawCash() {
     }
 }
 
-// --------------------------
-// DEPOSIT CASH
-// --------------------------
 void depositCash() {
     float amount;
 
@@ -105,9 +87,6 @@ void depositCash() {
     }
 }
 
-// --------------------------
-// CHANGE PIN
-// --------------------------
 void changePIN() {
     int oldPIN, newPIN;
 
@@ -131,9 +110,6 @@ void changePIN() {
     printf("PIN changed successfully!\n");
 }
 
-// --------------------------
-// MINI STATEMENT
-// --------------------------
 void miniStatement() {
     printf("\n----------------------------------\n");
     printf("         MINI STATEMENT\n");
@@ -153,9 +129,6 @@ void miniStatement() {
     }
 }
 
-// --------------------------
-// SAVE DATA TO FILE
-// --------------------------
 void saveData() {
     FILE *file = fopen("atmdata.txt", "w");
     if (file == NULL) return;
@@ -169,9 +142,6 @@ void saveData() {
     fclose(file);
 }
 
-// --------------------------
-// LOAD DATA FROM FILE
-// --------------------------
 void loadData() {
     FILE *file = fopen("atmdata.txt", "r");
     if (file == NULL) return;
@@ -185,9 +155,6 @@ void loadData() {
     fclose(file);
 }
 
-// --------------------------
-// MAIN MENU
-// --------------------------
 void menu() {
     int choice;
 
@@ -214,9 +181,6 @@ void menu() {
     }
 }
 
-// --------------------------
-// MAIN FUNCTION
-// --------------------------
 int main() {
     loadData();  // load saved data
 
@@ -232,3 +196,4 @@ int main() {
     menu();
     return 0;
 }
+
